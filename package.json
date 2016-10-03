@@ -2,7 +2,7 @@
   "name": "stock-exchange",
   "version": "1.0.0",
   "scripts": {
-    "compile": "babel src --out-dir build --copy-files",
+    "compile": "babel-cli src --out-dir build --copy-files",
     "build": "webpack -p --config webpack.build.config.js",
     "postinstall": "npm run compile && npm run build",
     "start": "node build/server/app.js",
@@ -25,7 +25,8 @@
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
-    "babel": "^6.1.18",
+    "babel": "^6.5.2",
+    "babel-cli": "^6.16.0",
     "babel-polyfill": "^6.1.19",
     "babel-register": "^6.2.0",
     "css-loader": "^0.22.0",
