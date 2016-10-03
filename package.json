@@ -4,7 +4,8 @@
   "scripts": {
     "compile": "babel src --out-dir build --copy-files",
     "build": "webpack -p --config webpack.build.config.js",
-    "all": "npm run compile && npm run build && pm2 restart monitor",
+    "postinstall": "npm run compile && npm run build",
+    "start": "node build/server/app.js",
     "lint": "eslint src"
   },
   "devDependencies": {
