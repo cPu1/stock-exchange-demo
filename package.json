@@ -2,7 +2,7 @@
   "name": "monitor",
   "version": "1.0.0",
   "scripts": {
-    "compile": "babel src --out-dir build --copy-files",
+    "compile": "babel-cli src --out-dir build --copy-files",
     "build": "webpack -p --config webpack.build.config.js",
     "postinstall": "npm run compile && npm run build",
     "start": "node build/server/app.js",
