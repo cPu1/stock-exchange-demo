@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "babel": "^6.1.18",
+    "babel-cli": "^6.16.0",
     "babel-polyfill": "^6.1.19",
     "babel-register": "^6.2.0",
     "css-loader": "^0.22.0",
