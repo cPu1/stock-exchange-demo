@@ -1,0 +1,58 @@
+@import "normalize";
+@import "header";
+
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+
+.content {
+	margin-top: 80px;
+	padding: 0 50px;
+	display: flex;
+	justify-content: center;
+	flex-flow: row nowrap;
+
+	header {
+		font-size: 20px;
+		font-weight: 700;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		margin-bottom: 25px;
+
+		.cash {
+			margin-left: auto;
+		}
+	}
+
+	.active-stock {
+		margin-right: 50px;
+		width: 30%;
+
+		.stats {margin-bottom: 10px}
+		input {width: 80px}
+		.stock-actions * {margin-right: 10px}
+	}
+
+	.portfolio {
+		width: 45%;
+		.table {
+			width: 100%;
+		}
+	}
+}
+
+button {
+	cursor: pointer;
+	outline: none;
+}
+
+.table {
+	td {
+		padding: 8px;
+		text-align: center;
+	}
+	th {
+		border-bottom: 1px solid #ccc;
+	}
+}
