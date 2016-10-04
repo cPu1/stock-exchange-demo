@@ -1,16 +1,11 @@
 import koa from 'koa'
 import session from 'koa-generic-session'
-
 import mount from 'koa-mount'
+import bodyParser from 'koa-bodyparser'
+import path from 'path'
 
 require('babel-polyfill')
 
-import config from './config.js'
-import React from 'react'
-import {match} from 'react-router'
-import bodyParser from 'koa-bodyparser'
-
-import createLocation from 'history/lib/createLocation'
 
 var serve = require('koa-static')
 
@@ -24,19 +19,18 @@ const app = koa()
 app.keys = ['benzinga']
 app.use(sessionMiddleware)
 
-app.use(mount('/static', serve(require('path').join(__dirname, '..', 'static'))))
+app.use(mount('/static', serve(path.join(__dirname, '..', 'static'))))
 
 import routes from './routes'
-
 import Router from 'koa-router'
 import userService from './service/user.js'
+import fs from 'fs'
+
 
 let userRouter = new Router()
 
-import fs from 'fs'
-
 userRouter.get('/', function *() {
-  this.body = fs.createReadStream('./views/index.html')
+  this.body = fs.createReadStream(path.join(__dirname, '/views/index.html'))
   this.set('Content-Type', 'text/html')
 })
 
