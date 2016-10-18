@@ -27,7 +27,6 @@ export default function stockReducer(state = initialState, action) {
 		case 'setQuantity':
 			return {...state, activeStock: {...state.activeStock, quantity: action.quantity}}
 		case 'getUserSuccess':
-			return {cash: action.cash, stocks: action.stocks}
 		case 'initState':
 			return {cash: action.cash, stocks: action.stocks}
 		default:
